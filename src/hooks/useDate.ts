@@ -15,11 +15,9 @@ export const useDate = () => {
   }
 
   useEffect(() => {
-    const interval = setInterval(getTime, 1000)
+    const intervalID = setInterval(getTime, 1000)
 
-    return () => {
-      clearInterval(interval)
-    }
+    return (() => clearInterval(intervalID))
   }, [])
 
   return {

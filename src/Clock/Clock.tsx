@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import './clock.css'
 
 interface ClockTime {
@@ -7,7 +8,7 @@ interface ClockTime {
   isLoading: boolean;
 }
 
-export const Clock = ({ hours, minutes, seconds, isLoading }: ClockTime) => {
+export const Clock = memo(({ hours, minutes, seconds, isLoading }: ClockTime) => {
   return (
     <section className='clock-container'>
       {isLoading ?
@@ -20,4 +21,4 @@ export const Clock = ({ hours, minutes, seconds, isLoading }: ClockTime) => {
       }
     </section>
   )
-}
+})
